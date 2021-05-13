@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Button, Select, InputNumber, Card } from 'antd';
 const { Option } = Select;
 
-function Search({ setcamera, setdate, setrobot, onFinish }) {
+function Search({ onFinish }) {
   const [form] = Form.useForm();
 
   return (
@@ -14,28 +14,13 @@ function Search({ setcamera, setdate, setrobot, onFinish }) {
     >
       <Form.Item name='robot' label='Robot'>
         <Select placeholder='Select a robot' allowClear>
-          <Option
-            key='c'
-            text='Curiosity'
-            value='curiosity'
-            onClick={() => setrobot('curiosity')}
-          >
+          <Option key='c' text='Curiosity' value='curiosity'>
             Curiosity
           </Option>
-          <Option
-            key='o'
-            text='Opportunity'
-            value='opportunity'
-            onClick={() => setrobot('opportunity')}
-          >
+          <Option key='o' text='Opportunity' value='opportunity'>
             Opportunity
           </Option>
-          <Option
-            key='s'
-            text='Spirit'
-            value='spirit'
-            onClick={() => setrobot('spirit')}
-          >
+          <Option key='s' text='Spirit' value='spirit'>
             Spirit
           </Option>
         </Select>
@@ -51,7 +36,6 @@ function Search({ setcamera, setdate, setrobot, onFinish }) {
             <Form.Item name='camera' label='Camera'>
               <Select placeholder='Select a camera' allowClear>
                 <Option
-                  onClick={() => setcamera('FHAZ')}
                   key='FHAZ'
                   text='Front Hazard Avoidance Camera'
                   value='FHAZ'
@@ -59,50 +43,29 @@ function Search({ setcamera, setdate, setrobot, onFinish }) {
                   Front Hazard Avoidance Camera
                 </Option>
                 <Option
-                  onClick={() => setcamera('RHAZ')}
                   key='RHAZ'
                   text='Rear Hazard Avoidance Camera'
                   value='RHAZ'
                 >
                   Rear Hazard Avoidance Camera
                 </Option>
-                <Option
-                  onClick={() => setcamera('MAST')}
-                  key='MAST'
-                  text='Mast Camera'
-                  value='MAST'
-                >
+                <Option key='MAST' text='Mast Camera' value='MAST'>
                   Mast Camera
                 </Option>
                 <Option
-                  onClick={() => setcamera('CHEMCAM')}
                   key='CHEMCAM'
                   text='Chemistry and Camera Complex'
                   value='CHEMCAM'
                 >
                   Chemistry and Camera Complex
                 </Option>
-                <Option
-                  onClick={() => setcamera('MAHLI')}
-                  key='MAHLI'
-                  text='Mars Hand Lens Imager'
-                  value='MAHLI'
-                >
+                <Option key='MAHLI' text='Mars Hand Lens Imager' value='MAHLI'>
                   Mars Hand Lens Imager
                 </Option>
-                <Option
-                  onClick={() => setcamera('MARDI')}
-                  key='Mars Descent Imager Imager'
-                  value='MARDI'
-                >
+                <Option key='Mars Descent Imager Imager' value='MARDI'>
                   Mars Descent Imager
                 </Option>
-                <Option
-                  onClick={() => setcamera('NAVCAM')}
-                  key='NAVCAM'
-                  text='Navigation Camera'
-                  value='NAVCAM'
-                >
+                <Option key='NAVCAM' text='Navigation Camera' value='NAVCAM'>
                   Navigation Camera
                 </Option>
               </Select>
@@ -111,7 +74,6 @@ function Search({ setcamera, setdate, setrobot, onFinish }) {
             <Form.Item name='camera' label='Camera'>
               <Select placeholder='Select a camera' allowClear>
                 <Option
-                  onClick={() => setcamera('FHAZ')}
                   key='FHAZ'
                   text='Front Hazard Avoidance Camera'
                   value='FHAZ'
@@ -119,31 +81,19 @@ function Search({ setcamera, setdate, setrobot, onFinish }) {
                   Front Hazard Avoidance Camera
                 </Option>
                 <Option
-                  onClick={() => setcamera('RHAZ')}
                   key='RHAZ'
                   text='Rear Hazard Avoidance Camera'
                   value='RHAZ'
                 >
                   Rear Hazard Avoidance Camera
                 </Option>
-                <Option
-                  onClick={() => setcamera('NAVCAM')}
-                  key='NAVCAM'
-                  text='Navigation Camera'
-                  value='NAVCAM'
-                >
+                <Option key='NAVCAM' text='Navigation Camera' value='NAVCAM'>
                   Navigation Camera
                 </Option>
-                <Option
-                  onClick={() => setcamera('PANCAM')}
-                  key='PANCAM'
-                  text='Panoramic Camera'
-                  value='PANCAM'
-                >
+                <Option key='PANCAM' text='Panoramic Camera' value='PANCAM'>
                   Panoramic Camera
                 </Option>
                 <Option
-                  onClick={() => setcamera('MINITES')}
                   key='MINITES'
                   text='Miniature Thermal Emission Spectrometer (Mini-TES)'
                   value='MINITES'
@@ -155,11 +105,7 @@ function Search({ setcamera, setdate, setrobot, onFinish }) {
           )
         }
       </Form.Item>
-      <Form.Item
-        name='date'
-        label='Date'
-        onChange={(e) => setdate(e.target.value)}
-      >
+      <Form.Item name='date' label='Date'>
         <InputNumber min='1' />
       </Form.Item>
       <Form.Item>
