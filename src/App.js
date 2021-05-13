@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import 'semantic-ui-css/semantic.min.css';
+import 'antd/dist/antd.css';
+import { Container } from 'semantic-ui-react';
+
+import MenuBar from './components/MenuBar';
+import PhotosPage from './pages/PhotosPage';
+import InfoPage from './pages/InfoPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <MenuBar />
+      <Container>
+        <Switch>
+          <Route exact path='/' component={PhotosPage} />
+          <Route exact path='/info' component={InfoPage} />
+        </Switch>
+      </Container>
+    </Router>
   );
 }
 
